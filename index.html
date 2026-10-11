@@ -262,83 +262,49 @@
     <p>Students और Companies के बीच एक बेहतर पुल।</p>
   </footer>
 
-  <script>
-    document.getElementById("studentForm").addEventListener("submit", async function(event) {
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec";
+
+document.getElementById("studentForm").addEventListener("submit", async function(event) {
   event.preventDefault();
 
+  const form = this;
+  const button = form.querySelector('button[type="submit"]');
+
+  button.disabled = true;
+  button.textContent = "Submitting...";
+
   const data = new URLSearchParams({
-    studentName: document.getElementById("studentName").value,
-    studentEmail: document.getElementById("studentEmail").value,
+    studentName: document.getElementById("studentName").value.trim(),
+    studentEmail: document.getElementById("studentEmail").value.trim(),
     course: document.getElementById("course").value,
-    skills: document.getElementById("skills").value
+    skills: document.getElementById("skills").value.trim()
   });
 
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec", {
+    await fetch(SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
       body: data
     });
 
-    alert("Registration भेज दी गई है।");
-    this.reset();
+    alert("Request bhej di gayi hai. Google Sheet mein entry check karein.");
+    form.reset();
+
   } catch (error) {
-    alert("समस्या आई। कृपया दोबारा कोशिश करें।");
+    alert("Request nahi bheji ja saki. Internet aur Apps Script URL check karein.");
+
+  } finally {
+    button.disabled = false;
+    button.textContent = "Submit Registration";
   }
 });
 
-  const data = new URLSearchParams({
-    studentName: document.getElementById("studentName").value,
-    studentEmail: document.getElementById("studentEmail").value,
-    course: document.getElementById("course").value,
-    skills: document.getElementById("skills").value
-  });
-
-  try {
-    await fetch("https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec", {
-      method: "POST",
-      mode: "no-cors",
-      body: data
-    });
-
-    alert("Registration भेज दी गई है।");
-    this.reset();
-  } catch (error) {
-    alert("समस्या आई। कृपया दोबारा कोशिश करें।");
-  }
+document.getElementById("companyForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  alert("Company form abhi demo hai. Iska data save karna agla step hai.");
 });
-
-const data = new URLSearchParams({
-studentName: document.getElementById("studentName").value,
-studentEmail: document.getElementById("studentEmail").value,
-course: document.getElementById("course").value,
-skills: document.getElementById("skills").value
-});
-
-try {
-https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec {
-method: "POST",
-mode: "no-cors",
-body: data
-});
-
-alert("Registration भेज दी गई है। Google Sheet में जाँच करें।");
-this.reset();
-
-} catch (error) {
-alert("समस्या आई। कृपया दोबारा कोशिश करें।");
-}
-});
-      alert("धन्यवाद! Student form का demo सफल रहा। अभी जानकारी सेव नहीं हुई है।");
-      this.reset();
-    });
-
-    document.getElementById("companyForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      alert("धन्यवाद! Company form का demo सफल रहा। अभी पोस्ट प्रकाशित नहीं हुई है।");
-      this.reset();
-    });
-  </script>
+</script>
 
 </body>
 </html>
