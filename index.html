@@ -264,7 +264,49 @@
 
   <script>
     document.getElementById("studentForm").addEventListener("submit", async function(event) {
-event.preventDefault();
+  event.preventDefault();
+
+  const data = new URLSearchParams({
+    studentName: document.getElementById("studentName").value,
+    studentEmail: document.getElementById("studentEmail").value,
+    course: document.getElementById("course").value,
+    skills: document.getElementById("skills").value
+  });
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: data
+    });
+
+    alert("Registration भेज दी गई है।");
+    this.reset();
+  } catch (error) {
+    alert("समस्या आई। कृपया दोबारा कोशिश करें।");
+  }
+});
+
+  const data = new URLSearchParams({
+    studentName: document.getElementById("studentName").value,
+    studentEmail: document.getElementById("studentEmail").value,
+    course: document.getElementById("course").value,
+    skills: document.getElementById("skills").value
+  });
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: data
+    });
+
+    alert("Registration भेज दी गई है।");
+    this.reset();
+  } catch (error) {
+    alert("समस्या आई। कृपया दोबारा कोशिश करें।");
+  }
+});
 
 const data = new URLSearchParams({
 studentName: document.getElementById("studentName").value,
