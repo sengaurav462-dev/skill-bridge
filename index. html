@@ -1,1 +1,280 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bridge | Student Opportunities</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f6fc;
+      color: #1f2937;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 22px 8%;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin-bottom: 0;
+    }
+
+    nav {
+      background: #0b2545;
+      padding: 14px 8%;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 20px;
+      background: #dceafe;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      color: #123c69;
+    }
+
+    .hero p {
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 16px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+
+    h2, h3 {
+      color: #123c69;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button, .link-button {
+      display: inline-block;
+      background: #1769aa;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    button:hover, .link-button:hover {
+      background: #0b4778;
+    }
+
+    .job {
+      border-left: 5px solid #1769aa;
+      padding: 12px 16px;
+      margin: 15px 0;
+      background: #f8fafc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #0b2545;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 30px;
+    }
+
+    .note {
+      color: #5b6472;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Skill Bridge</h1>
+    <p>Students और Companies को जोड़ने वाला प्लेटफॉर्म</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#register">Student Registration</a>
+    <a href="#jobs">Jobs</a>
+    <a href="#internships">Internships</a>
+    <a href="#company">For Companies</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>अपना Career शुरू करें!</h2>
+    <p>Students के लिए Jobs, Internships और Career Opportunities खोजें।</p>
+    <a class="link-button" href="#register">Register Now</a>
+    <a class="link-button" href="#jobs">Explore Opportunities</a>
+  </section>
+
+  <main class="container">
+
+    <section class="card" id="register">
+      <h2>Student Registration</h2>
+      <p>अपनी जानकारी भरें और अपने करियर की शुरुआत करें।</p>
+
+      <form id="studentForm">
+        <label for="studentName">पूरा नाम</label>
+        <input id="studentName" type="text" required placeholder="अपना नाम लिखें">
+
+        <label for="studentEmail">Email</label>
+        <input id="studentEmail" type="email" required placeholder="अपना Email लिखें">
+
+        <label for="course">आपका Course</label>
+        <select id="course" required>
+          <option value="">Course चुनें</option>
+          <option>Diploma Engineering</option>
+          <option>B.Tech</option>
+          <option>BCA</option>
+          <option>B.Com</option>
+          <option>B.Sc</option>
+          <option>Class 10 / 12</option>
+          <option>Other</option>
+        </select>
+
+        <label for="skills">Skills</label>
+        <textarea id="skills" rows="3" placeholder="जैसे: Computer, Python, Tally"></textarea>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+
+      <p class="note">Demo: यह फॉर्म अभी जानकारी किसी सर्वर पर सेव नहीं करता।</p>
+    </section>
+
+    <section class="card" id="jobs">
+      <h2>Latest Job Opportunities</h2>
+
+      <div class="job">
+        <h3>Junior Software Developer</h3>
+        <p>योग्यता: Computer Science / IT के विद्यार्थी</p>
+        <p>Skills: HTML, CSS, JavaScript</p>
+        <a class="link-button" href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer">Find Jobs</a>
+      </div>
+
+      <div class="job">
+        <h3>Electrical Technician</h3>
+        <p>योग्यता: Electrical Diploma या संबंधित कौशल</p>
+        <a class="link-button" href="https://www.naukri.com/" target="_blank" rel="noopener noreferrer">Find Jobs</a>
+      </div>
+
+      <div class="job">
+        <h3>Accounts Assistant</h3>
+        <p>योग्यता: Commerce / B.Com, Tally का ज्ञान उपयोगी</p>
+        <a class="link-button" href="https://www.naukri.com/" target="_blank" rel="noopener noreferrer">Find Jobs</a>
+      </div>
+    </section>
+
+    <section class="card" id="internships">
+      <h2>Internship Opportunities</h2>
+      <p>अपनी पढ़ाई के साथ अनुभव हासिल करने के लिए internships खोजें।</p>
+
+      <div class="job">
+        <h3>Internshala</h3>
+        <p>अलग-अलग क्षेत्रों में internships देखें।</p>
+        <a class="link-button" href="https://internshala.com/" target="_blank" rel="noopener noreferrer">Find Internships</a>
+      </div>
+
+      <div class="job">
+        <h3>AICTE Internship Portal</h3>
+        <p>विद्यार्थियों के लिए उपलब्ध internship opportunities देखें।</p>
+        <a class="link-button" href="https://internship.aicte-india.org/" target="_blank" rel="noopener noreferrer">Visit Portal</a>
+      </div>
+    </section>
+
+    <section class="card" id="company">
+      <h2>For Companies</h2>
+      <p>कंपनियाँ यहाँ अपनी Job या Internship की जानकारी दे सकती हैं।</p>
+
+      <form id="companyForm">
+        <label for="companyName">Company Name</label>
+        <input id="companyName" type="text" required placeholder="कंपनी का नाम">
+
+        <label for="contactEmail">Contact Email</label>
+        <input id="contactEmail" type="email" required placeholder="कंपनी का Email">
+
+        <label for="opportunityType">Opportunity Type</label>
+        <select id="opportunityType" required>
+          <option value="">चुनें</option>
+          <option>Job</option>
+          <option>Internship</option>
+        </select>
+
+        <label for="jobDetails">Job / Internship Details</label>
+        <textarea id="jobDetails" rows="4" required placeholder="योग्यता, Skills और अन्य जानकारी"></textarea>
+
+        <button type="submit">Submit Opportunity</button>
+      </form>
+
+      <p class="note">Demo: कंपनी की पोस्ट अभी सार्वजनिक रूप से सेव या प्रकाशित नहीं होगी।</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Skill Bridge | Learn • Connect • Grow</p>
+    <p>Students और Companies के बीच एक बेहतर पुल।</p>
+  </footer>
+
+  <script>
+    document.getElementById("studentForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("धन्यवाद! Student form का demo सफल रहा। अभी जानकारी सेव नहीं हुई है।");
+      this.reset();
+    });
+
+    document.getElementById("companyForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("धन्यवाद! Company form का demo सफल रहा। अभी पोस्ट प्रकाशित नहीं हुई है।");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
