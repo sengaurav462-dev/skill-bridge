@@ -185,7 +185,7 @@
         <button type="submit">Submit Registration</button>
       </form>
 
-      <p class="note">Demo: यह फॉर्म अभी जानकारी किसी सर्वर पर सेव नहीं करता।</p>
+      <p class="note">रजिस्ट्रेशन सबमिट करने के बाद अपनी जानकारी सेव होने की पुष्टि करें।</p>
     </section>
 
     <section class="card" id="jobs">
@@ -252,7 +252,7 @@
         <button type="submit">Submit Opportunity</button>
       </form>
 
-      <p class="note">Demo: कंपनी की पोस्ट अभी सार्वजनिक रूप से सेव या प्रकाशित नहीं होगी।</p>
+      <p class="note">Job या Internship की जानकारी सबमिट करें।</p>
     </section>
 
   </main>
@@ -300,9 +300,39 @@ document.getElementById("studentForm").addEventListener("submit", async function
   }
 });
 
-document.getElementById("companyForm").addEventListener("submit", function(event) {
+document.getElementById("companyForm").addEventListener("submit", async function(event) {
   event.preventDefault();
-  alert("Company form abhi demo hai. Iska data save karna agla step hai.");
+
+  const form = this;
+  const button = form.querySelector('button[type="submit"]');
+
+  button.disabled = true;
+  button.textContent = "Submitting...";
+
+  const data = new URLSearchParams({
+    companyName: document.getElementById("companyName").value.trim(),
+    contactEmail: document.getElementById("contactEmail").value.trim(),
+    opportunityType: document.getElementById("opportunityType").value,
+    jobDetails: document.getElementById("jobDetails").value.trim()
+  });
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbwkk8Xj0YxHWeVro5M7RoYKl3e8krrh7RxlktJU3ghvKorbPtW4Fu7JhXQY9QwAwFkd4A/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: data
+    });
+
+    alert("Request bhej di gayi hai. Companies sheet mein entry check karein.");
+    form.reset();
+
+  } catch (error) {
+    alert("Request nahi bheji ja saki. Dobara try karein.");
+
+  } finally {
+    button.disabled = false;
+    button.textContent = "Submit Opportunity";
+  }
 });
 </script>
 
